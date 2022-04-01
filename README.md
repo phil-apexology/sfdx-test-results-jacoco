@@ -29,15 +29,15 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx test2jacoco:convert [-i <string>] [-o <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-test2jacococonvert--i-string--o-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx test2jacoco:convert [-i <string>] [-p <string>] [-o <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-test2jacococonvert--i-string--p-string--o-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx test2jacoco:convert [-i <string>] [-o <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx test2jacoco:convert [-i <string>] [-p <string>] [-o <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 convert the results from running sfdx force:test into jacoco format
 
 ```
 USAGE
-  $ sfdx test2jacoco:convert [-i <string>] [-o <string>] [--json] [--loglevel 
+  $ sfdx test2jacoco:convert [-i <string>] [-p <string>] [-o <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -46,13 +46,17 @@ OPTIONS
   -o, --output=output                                                               the file where the output should be
                                                                                     stored
 
+  -p, --project=project                                                             [default: sfdx-project.json] the
+                                                                                    sfdx project json to use - will
+                                                                                    retrieve package directories
+
   --json                                                                            format output as json
 
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
 EXAMPLE
-  sfdx test2jacoco:convert --input ./testresults/test-result-7071y00000MJoUt.json --output 
+  sfdx test2jacoco:convert --input ./testresults/test-result-7071y00000MJoUt.json --project sfdx-project.json --output 
   ./testresults/codecoverage/jacoco.xml
 ```
 

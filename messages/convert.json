@@ -1,8 +1,9 @@
 {
   "commandDescription": "convert the results from running sfdx force:test into jacoco format",
   "inputFlagDescription": "the input filename",
+  "projectFlagDescription": "the sfdx project json to use - will retrieve package directories",
   "outputFlagDescription": "the file where the output should be stored",
   "examples": [
-    "sfdx test2jacoco:convert --input ./testresults/test-result-7071y00000MJoUt.json --output ./testresults/codecoverage/jacoco.xml"
+    "sfdx test2jacoco:convert --input ./testresults/test-result-7071y00000MJoUt.json --project sfdx-project.json --output ./testresults/codecoverage/jacoco.xml"
   ]
 }

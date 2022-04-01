@@ -4,6 +4,7 @@ import { flags, SfdxCommand } from '@salesforce/command';
 import { Messages } from '@salesforce/core';
 import { Result } from '../../models/test/json/result';
 import Builder from '../../models/jacoco/builder';
+import { SfdxProject } from '../../models/project/json/sfdxProject';
 
 // Initialize Messages with the current plugin directory
 Messages.importMessagesDirectory(__dirname);
@@ -25,6 +26,12 @@ export default class Convert extends SfdxCommand {
       char: 'i',
       description: messages.getMessage('inputFlagDescription'),
     }),
+    // flag with a value (-p, --project=VALUE)
+    project: flags.string({
+      char: 'p',
+      description: messages.getMessage('projectFlagDescription'),
+      default: 'sfdx-project.json',
+    }),
     // flag with a value (-o, --output=VALUE)
     output: flags.string({
       char: 'o',
@@ -45,6 +52,8 @@ export default class Convert extends SfdxCommand {
   public async run(): Promise<any> {
     const testReport = fs.readFileSync(this.flags.input, { encoding: 'utf-8' });
     const report: Result = JSON.parse(testReport);
-    new Builder().build(report, { outputFile : this.flags.output });
+    const project = fs.readFileSync(this.flags.project, { encoding: 'utf-8' });
+    const projectJson: SfdxProject = JSON.parse(project);
+    new Builder().build(report, projectJson, { outputFile : this.flags.output });
   }
 }
