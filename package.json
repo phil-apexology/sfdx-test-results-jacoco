@@ -1,7 +1,7 @@
 {
   "name": "sfdx-test-results-jacoco",
   "description": "helps with converting the results from running tests into jacoco format",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Phil Spenceley",
   "bugs": {
     "url": "https://github.com/https://github.com/phil-apexology/sfdx-test-results-jacoco/sfdx-test-results-jacoco/issues"

@@ -21,7 +21,7 @@ $ npm install -g sfdx-test-results-jacoco
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-sfdx-test-results-jacoco/0.0.0 win32-x64 node-v16.7.0
+sfdx-test-results-jacoco/0.1.0 win32-x64 node-v16.7.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -60,7 +60,7 @@ EXAMPLE
   ./testresults/codecoverage/jacoco.xml
 ```
 
-_See code: [src/commands/test2jacoco/convert.ts](https://github.com/phil-apexology/sfdx-test-results-jacoco/sfdx-test-results-jacoco/blob/v0.0.0/src/commands/test2jacoco/convert.ts)_
+_See code: [src/commands/test2jacoco/convert.ts](https://github.com/phil-apexology/sfdx-test-results-jacoco/sfdx-test-results-jacoco/blob/v0.1.0/src/commands/test2jacoco/convert.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
